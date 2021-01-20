@@ -255,7 +255,7 @@ class HTTPKerberosAuth(AuthBase):
     def authenticate_user(self, response, **kwargs):
         """Handles user authentication with gssapi/kerberos"""
 
-        host = urlparse(response.url).hostname
+        host = 'hadoop' #urlparse(response.url).hostname
 
         try:
             auth_header = self.generate_request_header(response, host)
