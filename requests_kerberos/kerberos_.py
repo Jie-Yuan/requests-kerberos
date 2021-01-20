@@ -255,7 +255,7 @@ class HTTPKerberosAuth(AuthBase):
     def authenticate_user(self, response, **kwargs):
         """Handles user authentication with gssapi/kerberos"""
 
-        host = 'hadoop' #urlparse(response.url).hostname
+        host = 'hadoop' #'hadoop'
 
         try:
             auth_header = self.generate_request_header(response, host)
@@ -348,7 +348,7 @@ class HTTPKerberosAuth(AuthBase):
         log.debug("authenticate_server(): Authenticate header: {0}".format(
             _negotiate_value(response)))
 
-        host = urlparse(response.url).hostname
+        host = 'hadoop'
 
         try:
             # If this is set pass along the struct to Kerberos
